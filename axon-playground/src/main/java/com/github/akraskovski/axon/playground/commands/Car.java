@@ -28,7 +28,6 @@ public class Car {
     @AggregateIdentifier
     private UUID carId;
     private boolean available;
-    private long mileage;
 
     public Car() {
     }
@@ -58,7 +57,6 @@ public class Car {
         log.info("[EventSourcingHandler]: Received event: {}", event);
         carId = event.getCarId();
         available = true;
-        mileage = 1;
     }
 
     @EventSourcingHandler
@@ -71,6 +69,5 @@ public class Car {
     protected void on(CarReturnedEvent event) {
         log.info("[EventSourcingHandler]: Received event: {}", event);
         available = true;
-        mileage += event.getDistance();
     }
 }
