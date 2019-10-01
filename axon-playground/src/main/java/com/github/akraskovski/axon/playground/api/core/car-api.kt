@@ -13,7 +13,7 @@ data class CreateCarCommand(
 )
 
 data class RentCarCommand(@TargetAggregateIdentifier val carId: UUID)
-data class ReturnCarCommand(@TargetAggregateIdentifier val carId: UUID)
+data class ReturnCarCommand(@TargetAggregateIdentifier val carId: UUID, val distance: Long)
 
 //Events
 data class CarCreatedEvent(
@@ -24,7 +24,7 @@ data class CarCreatedEvent(
 )
 
 data class CarRentedEvent(val carId: UUID)
-data class CarReturnedEvent(val carId: UUID)
+data class CarReturnedEvent(val carId: UUID, val distance: Long)
 
 //Queries
 class CarAvailableQuery
