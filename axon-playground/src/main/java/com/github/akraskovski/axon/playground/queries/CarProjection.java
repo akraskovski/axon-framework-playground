@@ -23,8 +23,7 @@ public class CarProjection {
 
     @EventHandler
     public void on(CarCreatedEvent event) {
-        var carSummary = new CarSummary(event.getCarId(), 1);
-        carSummaryRepository.save(carSummary);
+        carSummaryRepository.save(new CarSummary(event.getCarId(), 1));
     }
 
     @EventHandler

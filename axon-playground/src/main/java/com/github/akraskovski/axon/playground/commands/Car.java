@@ -41,14 +41,14 @@ public class Car {
     @CommandHandler
     public void handle(RentCarCommand command) {
         log.info("[CommandHandler]: Received command: {}", command);
-        isFalse(available, () -> "Car is already rented");
+        isTrue(available, () -> "Car is already rented");
         apply(new CarRentedEvent(carId));
     }
 
     @CommandHandler
     public void handle(ReturnCarCommand command) {
         log.info("[CommandHandler]: Received command: {}", command);
-        isTrue(available, () -> "Car is already returned");
+        isFalse(available, () -> "Car is already returned");
         apply(new CarReturnedEvent(carId, command.getDistance()));
     }
 
