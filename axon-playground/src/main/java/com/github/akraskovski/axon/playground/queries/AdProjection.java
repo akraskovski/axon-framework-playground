@@ -1,6 +1,7 @@
 package com.github.akraskovski.axon.playground.queries;
 
 import com.github.akraskovski.axon.playground.api.core.AdApprovedEvent;
+import com.github.akraskovski.axon.playground.api.core.AdFinishedEvent;
 import com.github.akraskovski.axon.playground.api.core.AdShowedRequestEvent;
 import com.github.akraskovski.axon.playground.api.core.FetchAdQuery;
 import com.github.akraskovski.axon.playground.api.core.FetchAllAdsQuery;
@@ -30,6 +31,11 @@ public class AdProjection {
     @EventHandler
     public void on(AdApprovedEvent event) {
         adSummaryRepository.findById(event.getAdId()).ifPresent(AdSummary::startServing);
+    }
+
+    @EventHandler
+    public void on(AdFinishedEvent event) {
+        adSummaryRepository.findById(event.getAdId()).ifPresent(AdSummary::stopServing);
     }
 
     @QueryHandler

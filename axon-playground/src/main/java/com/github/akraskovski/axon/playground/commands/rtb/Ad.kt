@@ -29,6 +29,11 @@ class Ad(@field:AggregateIdentifier var adId: UUID?) {
         AggregateLifecycle.apply(command.toEvent())
     }
 
+    @CommandHandler
+    fun handle(command: FinishAdCommand) {
+        AggregateLifecycle.apply(command.toEvent())
+    }
+
     @EventSourcingHandler
     private fun on(event: AdCreatedEvent) {
         adId = event.adId
