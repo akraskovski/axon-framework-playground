@@ -6,6 +6,7 @@ import com.github.akraskovski.axon.playground.api.core.CarReturnedEvent;
 import com.github.akraskovski.axon.playground.api.core.CreateCarCommand;
 import com.github.akraskovski.axon.playground.api.core.RentCarCommand;
 import com.github.akraskovski.axon.playground.api.core.ReturnCarCommand;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -22,6 +23,7 @@ import static org.axonframework.modelling.command.AggregateLifecycle.apply;
  * An {@link org.axonframework.modelling.command.AggregateRoot} class defining the car domain model.
  */
 @Slf4j
+@Getter
 @Aggregate
 public class Car {
 
