@@ -1,4 +1,4 @@
-package com.github.akraskovski.axon.playground.commands;
+package com.github.akraskovski.axon.playground.commands.car;
 
 import com.github.akraskovski.axon.playground.api.core.CarCreatedEvent;
 import com.github.akraskovski.axon.playground.api.core.CarRentedEvent;

@@ -1,4 +1,4 @@
-package com.github.akraskovski.axon.playground.api.rest;
+package com.github.akraskovski.axon.playground.api.rest.car;
 
 import com.github.akraskovski.axon.playground.api.core.CarAvailableQuery;
 import com.github.akraskovski.axon.playground.api.core.CarFetchQuery;
